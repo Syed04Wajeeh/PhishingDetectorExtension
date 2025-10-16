@@ -5,28 +5,22 @@
   "description": "Scans emails for phishing attempts.",
   "permissions": [
     "storage",
-    "activeTab",
-    "identity" 
+    "identity"
   ],
   "background": {
     "service_worker": "background.js"
   },
-  "content_scripts": [
-    {
-      "matches": ["https://mail.google.com/*"],
-      "js": ["content.js"]
-    }
-  ],
-  "action": {
-    "default_popup": "popup.html"
+  "oauth2": {
+    "client_id": "",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly"
+    ]
   },
   "icons": {
     "256": "icon.png"
   },
-  "oauth2": { 
-    "client_id": "962531239723-4pmm0eo0dp6phrn2qcllg6ubtk75tkbs.apps.googleusercontent.com",
-    "scopes": [
-      "https://www.googleapis.com/auth/gmail.readonly"
-    ]
+  "action": {
+    "default_title": "Scan Inbox for Phishing",
+    "default_popup": "popup.html"
   }
 }
