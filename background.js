@@ -91,11 +91,10 @@ async function fetchEmailDetailsAndAnalyze(token, messageId) {
 
 // Function to analyze email content 
 async function analyzeEmailWithGemini(emailContent) {
-  const API_KEY = ''; 
+  const API_KEY = 'YOUR_API_KEY_HERE'; 
   //TODO: Add api key here
   const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
   
-  // --- THIS IS YOUR FULL, CORRECT PROMPT ---
   const prompt = `
     You are an advanced phishing and scam detection AI.
     Analyze the following email content and determine if it is a phishing attempt.
